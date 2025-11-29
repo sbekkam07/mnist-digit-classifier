@@ -3,10 +3,10 @@ from PIL import Image
 from tensorflow.keras.models import load_model
 import matplotlib.pyplot as plt
 
-MODEL_PATH = "models/mnist_model.h5"
+# Use the CNN model you saved from Colab
+MODEL_PATH = "models/mnist_cnn_model.h5"
 
-
-# Load your saved model
+# Load your saved CNN model
 model = load_model(MODEL_PATH)
 
 def preprocess_image(image_path):
@@ -18,10 +18,13 @@ def preprocess_image(image_path):
     # OPTIONAL:
     # If your digits are dark writing on a white background:
     # uncomment this line:
-    # img_arr = 255 - img_arr
+    #img_arr = 255 - img_arr
 
+    # Normalize to [0, 1]
     img_arr = img_arr / 255.0
-    img_arr = img_arr.reshape(1, 28 * 28)
+
+    # For CNN: (1, 28, 28, 1) instead of (1, 784)
+    img_arr = img_arr.reshape(1, 28, 28, 1)
     return img_arr
 
 def predict_digit(image_path):
@@ -32,6 +35,7 @@ def predict_digit(image_path):
 
 def show_preprocessed(image_path):
     x = preprocess_image(image_path)
+    # x shape is (1, 28, 28, 1), so squeeze to (28, 28)
     img_28 = x.reshape(28, 28)
     plt.imshow(img_28, cmap="gray")
     plt.title("Preprocessed 28x28 image")
@@ -39,7 +43,7 @@ def show_preprocessed(image_path):
     plt.show()
 
 if __name__ == "__main__":
-    img_path = "examples/example_digit_black_6.png"
+    img_path = "examples/example_digit_black_3.png"
     show_preprocessed(img_path)
     digit, probs = predict_digit(img_path)
     print("Predicted digit:", digit)
