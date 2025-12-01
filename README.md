@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://www.tensorflow.org/)
 [![Keras](https://img.shields.io/badge/Keras-Deep%20Learning-red.svg)](https://keras.io/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](#-license)
 
 A state-of-the-art **Convolutional Neural Network (CNN)** implementation for handwritten digit recognition using the MNIST dataset. This project demonstrates proficiency in deep learning, computer vision, and production-ready machine learning systems.
 
@@ -109,20 +109,6 @@ Convolutional Neural Networks are ideal for this task because they:
    ```
 
 3. **Install dependencies**
-   ```bash
-   pip install tensorflow numpy pillow matplotlib jupyter
-   ```
-
-   Or create a `requirements.txt` file with:
-   ```
-   tensorflow>=2.0.0
-   numpy>=1.19.0
-   pillow>=8.0.0
-   matplotlib>=3.3.0
-   jupyter>=1.0.0
-   ```
-   
-   Then install:
    ```bash
    pip install -r requirements.txt
    ```
@@ -336,7 +322,7 @@ Contributions are welcome! Whether you're fixing bugs, adding features, or impro
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is open source and available for educational and personal use. Feel free to fork, modify, and use this project for your own learning and development.
 
 ## 📧 Contact
 
